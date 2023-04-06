@@ -1,49 +1,45 @@
-import {Card} from './Profile.styled';
+import {Card, Description, Avatar, Name, Tag, Loc, Stats, Label, Quantity} from './Profile.styled';
 import PropTypes from 'prop-types';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
-  // const { username, tag, location, avatar, stats } = data;
   return (
-    <Card>
-      <div className="profile">
-        <div className="description">
-          <img
+      <Card>
+        <Description>
+          <Avatar
             src={avatar}
             alt="User avatar"
-            className="avatar"
           />
-          <p className="name">{username}</p>
-          <p className="tag">@{tag}</p>
-          <p className="location">{location}</p>
-        </div>
+          <Name>{username}</Name>
+          <Tag>@{tag}</Tag>
+          <Loc>{location}</Loc>
+        </Description>
 
-        <ul className="stats">
+        <Stats>
           <li>
-            <span className="label">Followers</span>
-            <span className="quantity">{stats.followers}</span>
+            <Label>Followers</Label>
+            <Quantity>{stats.followers}</Quantity>
           </li>
           <li>
-            <span className="label">Views</span>
-            <span className="quantity">{stats.views}</span>
+            <Label>Views</Label>
+            <Quantity>{stats.views}</Quantity>
           </li>
           <li>
-            <span className="label">Likes</span>
-            <span className="quantity">{stats.likes}</span>
+            <Label>Likes</Label>
+            <Quantity>{stats.likes}</Quantity>
           </li>
-        </ul>
-      </div>
-    </Card>
+        </Stats>
+      </Card>
   );
 };
 
 Profile.propTypes = {
-    username: PropTypes.string.isRequired,
-    tag: PropTypes.string,
-    location: PropTypes.string,
-    avatar: PropTypes.string,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
     stats: PropTypes.exact({
       followers: PropTypes.number,
       views: PropTypes.number,
       likes: PropTypes.number,
     })
-  };
+};
