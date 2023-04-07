@@ -1,20 +1,24 @@
-import { FriendListItem } from './FriendListItem/FriendListItem';
-import {StyledUl} from './FriendList.styled';
+import {FriendsList, FriendStatus, FriendsItem, FriendAvatar, FriendName} from './FriendList.styled';
 import PropTypes from 'prop-types';
 
 export const FriendList = ({ friends }) => {
   return (
-    <StyledUl className="friend-list">
+    <FriendsList>
       {friends.map(item => (
-        <li className="item" key={friends.id}>
-          <FriendListItem isOnline={item.isOnline} avatar={item.avatar} name={item.name}/>
-        </li>
+        <FriendsItem key={item.id}>
+            <FriendStatus statusColor={item.isOnline}>{item.isOnline}</FriendStatus>
+            <FriendAvatar src={item.avatar} alt="User avatar" width="48" />
+            <FriendName>{item.name}</FriendName>
+        </FriendsItem>
       ))}
-    </StyledUl>
+    </FriendsList>
 )};
 
 FriendList.propTypes = {
   friends: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
   })),
 };

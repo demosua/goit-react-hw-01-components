@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 export const Statistics = ({title, data}) => {
   return (
-    <StatSection className="statistics">
-      { title && <StatTitle className="title">{title}</StatTitle>}
-      <StatList data = {data}/>
+    <StatSection>
+      { title && <StatTitle>{title}</StatTitle>}
+      <StatList data={data}/>
     </StatSection>
   );
 };

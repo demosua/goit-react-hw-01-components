@@ -1,13 +1,13 @@
-import {StyledUl, StyledLi} from './StatList.styled'
+import {StyledUl, StyledLi, StyledLabel, StyledPercentage} from './StatList.styled'
 import PropTypes from 'prop-types';
 
 export const StatList = ({data}) => {
   return (
-    <StyledUl className="stat-list">
+    <StyledUl>
       {data.map(item => (
-        <StyledLi className="item" key={item.id}>
-          <span className="label">{item.label}</span>
-          <span className="percentage">{item.percentage}</span>
+        <StyledLi key={item.id}>
+          <StyledLabel>{item.label}</StyledLabel>
+          <StyledPercentage>{item.percentage}%</StyledPercentage>
         </StyledLi>
       ))}
     </StyledUl>

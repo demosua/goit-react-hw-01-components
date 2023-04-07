@@ -16,9 +16,14 @@ export const StyledUl = styled.ul`
 export const StyledLi = styled.li`
   width: 20%;
   background-color: ${getRandomHexColor};
+`;
 
-  & .label{
+export const StyledLabel = styled.span`
     font-weight: 700;
     display: block;
-  }
 `;
+export const StyledPercentage = styled.span`
+
+`;
+
+
