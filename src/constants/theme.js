@@ -1,6 +1,6 @@
 export const theme = {
   colors: {
-    isOnline: 'green',
-    isOfline: 'red',
+    isOnline: '#7CFC00',
+    isOfline: '#C70039',
   }
 };
